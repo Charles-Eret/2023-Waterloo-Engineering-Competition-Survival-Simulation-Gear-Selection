@@ -1,7 +1,7 @@
 from pulp import LpMaximize, LpProblem, LpVariable, LpStatus
 import csv
 
-#STAGE1
+#STAGE1: Sorting Gear
 #Read Files
 gear_data = {}
 with open('gear.csv') as csv_file:
@@ -26,7 +26,7 @@ sorted_by_combat_usefulnes_only = [(item[0], item[1]['CombatUsefulness']) for it
 
 
 
-#STAGE 2
+#STAGE 2: Solving for best gear combo with chosen situation
 weight_limit = 8
 #making model
 model = LpProblem(name="model", sense=LpMaximize)
